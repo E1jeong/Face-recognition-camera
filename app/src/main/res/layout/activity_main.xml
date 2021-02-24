@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:opencv="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_basic"
+        opencv:layout_constraintBottom_toTopOf="@id/btn_capture"
+        opencv:layout_constraintLeft_toRightOf="@id/btn_filter_choice"
+        opencv:layout_constraintRight_toLeftOf="@id/btn_first_filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:visibility="invisible"
+        android:text="Basic" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_first_filter"
+        opencv:layout_constraintBottom_toTopOf="@id/btn_capture"
+        opencv:layout_constraintLeft_toRightOf="@id/btn_basic"
+        opencv:layout_constraintRight_toLeftOf="@id/btn_second_filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:visibility="invisible"
+        android:text="Gray" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_second_filter"
+        opencv:layout_constraintBottom_toTopOf="@id/btn_capture"
+        opencv:layout_constraintLeft_toRightOf="@id/btn_first_filter"
+        opencv:layout_constraintRight_toLeftOf="@id/btn_third_filter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:visibility="invisible"
+        android:text="HSV" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_third_filter"
+        opencv:layout_constraintBottom_toTopOf="@id/btn_capture"
+        opencv:layout_constraintLeft_toRightOf="@id/btn_second_filter"
+        opencv:layout_constraintRight_toRightOf="parent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:visibility="invisible"
+        android:text="Luv" />
+
+    <android.support.v7.widget.AppCompatButton
+    android:id="@+id/btn_capture"
+    opencv:layout_constraintBottom_toBottomOf="parent"
+    opencv:layout_constraintLeft_toLeftOf="parent"
+    opencv:layout_constraintRight_toRightOf="parent"
+    android:layout_width="60dp"
+    android:layout_height="60dp"
+    android:layout_gravity="center_horizontal"
+    android:background="@drawable/button_capture"
+
+    />
+
+    <!--
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_camera_sensor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="12dp"
+        android:text="전방/후방"
+        opencv:layout_constraintBottom_toBottomOf="parent"
+        opencv:layout_constraintLeft_toLeftOf="parent" />
+    -->
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_sunglasses"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="12dp"
+        android:text="선글라스"
+        opencv:layout_constraintBottom_toBottomOf="parent"
+        opencv:layout_constraintLeft_toLeftOf="parent" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_move_gallery"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginRight="12dp"
+        android:text="Gallery"
+        opencv:layout_constraintBottom_toBottomOf="parent"
+        opencv:layout_constraintRight_toRightOf="parent"
+        />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/btn_filter_choice"
+        opencv:layout_constraintBottom_toTopOf="@id/btn_capture"
+        opencv:layout_constraintLeft_toLeftOf="parent"
+        opencv:layout_constraintRight_toLeftOf="@id/btn_basic"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Filter choice"
+        />
+
+    <org.opencv.android.JavaCameraView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        opencv:camera_id="any"
+        android:visibility="gone"
+        android:id="@+id/activity_surface_view"
+        />
+
+</android.support.constraint.ConstraintLayout>
